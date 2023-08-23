@@ -71,12 +71,12 @@ public class Actividad1 {
         }
         
         
-        Estudiante.estudiantePromedio(arrayE);
+        Estudiante[] promedio=Estudiante.estudiantePromedio(arrayE);
         
         System.out.println("ORGANIZADO POR PROMEDIO");
         for(int i=0; i<arrayE.length; i++){
             System.out.println("---------------------------------------------");
-            System.out.println(arrayE[i]);
+            System.out.println(promedio[i]);
             System.out.println("---------------------------------------------");
         }
           

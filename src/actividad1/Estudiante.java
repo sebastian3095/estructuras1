@@ -16,9 +16,16 @@ public class Estudiante implements Comparable<Estudiante> {
     private double[] notas;
     private double promedio;
     
-    public static void estudiantePromedio(Estudiante[] a){
+    public static Estudiante[] estudiantePromedio(Estudiante[] a){
         
         Estudiante[]b = new Estudiante[a.length];
+        
+        for(int i=0; i<b.length;i++){
+            Estudiante ss = new Estudiante(" ",0,0);
+            ss.setNotas(0, 0, 0);
+            b[i]=ss;
+        }
+        
         Estudiante mayor = new Estudiante();
         mayor.setPromedio(0);
         int pos=0;
@@ -32,12 +39,20 @@ public class Estudiante implements Comparable<Estudiante> {
                 }
             }
             
-            b[i]=a[pos];
+            
+            
+            //b[i]=a[pos];
+            
+            b[i].setNombre(a[pos].getNombre());
+            b[i].setEdad(a[pos].getEdad());
+            b[i].setnIdentificacion(a[pos].getnIdentificacion());
+            b[i].setNotas(a[pos].getNotas()[0], a[pos].getNotas()[1],a[pos].getNotas()[2]);
+            
             a[pos].setPromedio(0);
             mayor.setPromedio(0);
         }
         
-        a=b;
+        return b;
         
         
     }
@@ -89,6 +104,10 @@ public class Estudiante implements Comparable<Estudiante> {
         
         this.calcularP();
         
+    }
+    
+    public double[] getNotas(){
+        return notas;
     }
     
     public double calcularP(){
