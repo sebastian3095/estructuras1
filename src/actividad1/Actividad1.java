@@ -19,7 +19,7 @@ public class Actividad1 {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        Estudiante arrayE[] = new Estudiante[2];
+        Estudiante arrayE[] = new Estudiante[3];
         
         Scanner sc = new Scanner(System.in);
         
